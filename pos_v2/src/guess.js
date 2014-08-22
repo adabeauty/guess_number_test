@@ -1,12 +1,11 @@
 function Guess(answerGenerate, compareNum){
-    this.answerGenerate = answerGenerate;
+    this.answerGenerater = answerGenerate.generateNum();
     this.compareNum = compareNum;
 }
 
 Guess.prototype.guess = function (input){
 
-    var answer = this.answerGenerate.generateNum();
-    var results = this.compareNum.compare(answer, input);
+    var results = this.compareNum.compare(this.answerGenerater, input);
     return results;
-    
+
 };

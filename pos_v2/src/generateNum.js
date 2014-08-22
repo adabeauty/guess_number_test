@@ -11,22 +11,7 @@ generateNum.prototype.generateNum = function(){
             randomNum += temp;
             num++;
         }
-        // if(!judgeHasExist(temp, randomNum)){
-        //     randomNum += temp;
-        //     num++;
-        // }
     }
     console.log(randomNum);
     return randomNum;
 };
-
-// function judgeHasExist(temp, randomNum){
-//
-//     var hasExist = false;
-//     for(var i=0; i<randomNum.length; i++){
-//         if(temp === randomNum.charAt(i)){
-//             hasExist = hasExist || true;
-//         }
-//     }
-//     return hasExist;
-// }
