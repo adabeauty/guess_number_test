@@ -7,7 +7,7 @@ describe('interface test', function(){
 
     beforeEach(function(){
 
-        input = ['1316', '1234', '2536'];
+        input = ['1316', '1234', 'a243','34567','2536'];
 
         answerGenerate = new GenerateNum();
         spyOn(answerGenerate, "generateNum").and.returnValue('1234');
@@ -15,10 +15,6 @@ describe('interface test', function(){
         resultString_right = new CompareNumber();
 
         guess_right = new Guess(answerGenerate, resultString_right);
-
-        // resultString_wrong = new CompareNumber();
-        // spyOn(resultString_wrong, "compare").and.returnValue('1A1B');
-        // guess_wrong = new Guess(answerGenerate, resultString_wrong);
 
     });
 
@@ -32,16 +28,31 @@ describe('interface test', function(){
         expect(game.number).toEqual(6);
     });
 
-    it('the form of input is ok', function(){
+    it('input isnot repeated', function(){
 
         var game = new Interface(guess_right);
         var welcomeString = game.startGame();
 
-        var judgeInput_1 = game.judgeInput(input[0]);
-        var judgeInput_2 = game.judgeInput(input[1]);
+        var judgeInput_0 = game.judgeInput(input[0]);
+        var judgeInput_1 = game.judgeInput(input[1]);
 
-        expect(judgeInput_1).toEqual(false);
-        expect(judgeInput_2).toEqual(true);
+        expect(judgeInput_0).toEqual(false);
+        expect(judgeInput_1).toEqual(true);
+
+    });
+    it('inputs are digit',function(){
+        var game = new Interface(guess_right);
+        var welcomeString = game.startGame();
+
+        var judgeInput_2 = game.judgeInput(input[2]);
+        expect(judgeInput_2).toEqual(false);
+    });
+    it('the length of input is 4',function(){
+        var game = new Interface(guess_right);
+        var welcomeString = game.startGame();
+
+        var judegInput_3 = game.judgeInput(input[3]);
+        expect(judegInput_3).toEqual(false);
     });
 
 
@@ -61,7 +72,7 @@ describe('interface test', function(){
         var game = new Interface(guess_right);
         var welcomeString = game.startGame();
 
-        var answerString = game.judgeAnswer(input[2]);
+        var answerString = game.judgeAnswer(input[4]);
 
         expect(answerString).toBe('1A1B' + ', start next game !');
 

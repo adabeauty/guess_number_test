@@ -13,8 +13,10 @@ Interface.prototype.startGame = function(){
 Interface.prototype.judgeInput = function(input){
 
     var judgeValue = true;
-    var repeatNum = 0
     var digit = '0123456789';
+    if(input.length != 4){
+        return false;
+    }
     for(var i=0; i<input.length; i++){
         if(input.lastIndexOf(input.charAt(i)) != i || digit.search(input.charAt(i)) === -1 ){
             judgeValue = false;
