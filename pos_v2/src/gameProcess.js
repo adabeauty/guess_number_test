@@ -13,9 +13,10 @@ Interface.prototype.startGame = function(){
 Interface.prototype.judgeInput = function(input){
 
     var judgeValue = true;
-    var repeatNum = 0;
+    var repeatNum = 0
+    var digit = '0123456789';
     for(var i=0; i<input.length; i++){
-        if(input.lastIndexOf(input.charAt(i)) != i){
+        if(input.lastIndexOf(input.charAt(i)) != i || digit.search(input.charAt(i)) === -1 ){
             judgeValue = false;
             break;
         }
@@ -30,7 +31,7 @@ Interface.prototype.judgeAnswer = function(input){
     if(this.rightAnswer === input){
         return 'Congratulation !';
     }else{
-        return judgeResults + 'start next game !';
+        return judgeResults + ', start next game !';
     }
 };
 

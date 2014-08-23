@@ -9,7 +9,7 @@ describe('guess', function(){
 
     it('results is right', function(){
 
-        var answerGenerate = new generateNum();
+        var answerGenerate = new GenerateNum();
         spyOn(answerGenerate, "generateNum").and.returnValue('1234');
 
         var results = new CompareNumber();

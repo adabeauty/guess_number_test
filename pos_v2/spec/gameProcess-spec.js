@@ -9,7 +9,7 @@ describe('interface test', function(){
 
         input = ['1316', '1234', '2536'];
 
-        answerGenerate = new generateNum();
+        answerGenerate = new GenerateNum();
         spyOn(answerGenerate, "generateNum").and.returnValue('1234');
 
         resultString_right = new CompareNumber();
@@ -63,7 +63,7 @@ describe('interface test', function(){
 
         var answerString = game.judgeAnswer(input[2]);
 
-        expect(answerString).toBe('1A1B' + 'start next game !');
+        expect(answerString).toBe('1A1B' + ', start next game !');
 
     });
 

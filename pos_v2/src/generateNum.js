@@ -1,8 +1,8 @@
-function generateNum(){
+function GenerateNum(){
 
 }
 
-generateNum.prototype.generateNum = function(){
+GenerateNum.prototype.generateNum = function(){
     var randomNum = '';
     var num = 0;
     while(num<4){

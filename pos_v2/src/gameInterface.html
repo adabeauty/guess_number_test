@@ -1,9 +1,53 @@
-<html>
-<head>
-    <meta charset="">
-</head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
 
-<body>
-</body>
+        <title>Game: Guess Number</title>
+
+        <link href="../lib/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="../lib/jquery-2.1.1/jquery-2.1.1.min.js"></script>
+        <script src="../lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+        <script src="../lib/angular.min.js"></script>
+
+        <script src="main.js"></script>
+        <script src="generateNum.js"></script>
+        <script src="compare_num.js"></script>
+        <script src="guess.js"></script>
+        <script src="gameProcess.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header text-center">
+              <h1 class="text-capitalize">猜字游戏</h1>
+            </div>
+            <div class="text-danger">
+                <h3>游戏规则:</h3>
+                <p>你共有六次机会猜字,当答案错误时候,会显示xAyB的提示,表示你的答案中有x个数字位置和值均正确,有y个数字仅值正确,位置不正确</p>
+            </div>
+            <div class="text-center inputPart">
+                <h4>
+                    请输入四位不相同的数字
+                    <label><input name="inputBox" class="img-rounded inputBox"></label>
+                    你还有&nbsp;<span class="chanceNum text-info">6</span>&nbsp;次机会
+                </h4>
+            </div>
+            <div class="text-center">
+                <label><button class="btn btn-primary btn-lg submitButton">提交答案</button></label>
+            </div>
+            <div class="text-center">
+                <label><button class="btn btn-primary btn-lg startButton">开始游戏</button></label>
+            </div>
+            <div>
+                <h2 class="text-center text-danger gameOver"></h2>
+            </div>
+            <div>
+                <h2 class="text-center text-success congratulation"></h2>
+            </div>
+        </div>
+
+    </body>
 
 </html>

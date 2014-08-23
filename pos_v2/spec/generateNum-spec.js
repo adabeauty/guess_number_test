@@ -12,13 +12,13 @@ describe('generateNum',function(){
     });
 
     it('the length of generateNum is 4', function(){
-        var generateNumber = new generateNum();
+        var generateNumber = new GenerateNum();
         var results = generateNumber.generateNum();
         var length = results.length;
         expect(length).toBe(4);
     });
     it('generateNum is number', function(){
-        var generateNumber = new generateNum();
+        var generateNumber = new GenerateNum();
         var results = generateNumber.generateNum();
 
         for(var i=0; i<4; i++){
@@ -31,9 +31,9 @@ describe('generateNum',function(){
 
     it('generateNum is random', function(){
 
-        var generateNumber_1 = new generateNum();
+        var generateNumber_1 = new GenerateNum();
         var results_1 = generateNumber_1.generateNum();
-        var generateNumber_2 = new generateNum();
+        var generateNumber_2 = new GenerateNum();
         var results_2 = generateNumber_2.generateNum();
 
         if(results_1 === results_2){
@@ -44,9 +44,9 @@ describe('generateNum',function(){
 
     it('generateNum is repeat',function(){
 
-        var generateNumber = new generateNum();
+        var generateNumber = new GenerateNum();
         var results = generateNumber.generateNum()
-        
+
         var tip = true;
         for(var i=0; i<results.length; i++){
             for(var j=0; j<results.length; j++){
